@@ -31,7 +31,7 @@ const renderCardsContent = (data) => {
 	let cardsListData = resData.slice(resData.indexOf('') + 1);
 	const filteredCardsListData = cardsListData.filter((item) => Boolean(item));
 
-	const [cardsSummaryTitle, cardsSummarySubtitle, cardsSummaryDescription] =
+	const [cardsSummarySubtitle, cardsSummaryTitle, cardsSummaryDescription] =
 		cardsSummaryData;
 
 	const spaceSize = cardsListData.indexOf('');
@@ -55,15 +55,15 @@ const renderCardsContent = (data) => {
 	const sectionHeadEl =
 		sectionHeadTemplateNode.querySelector('.section__head');
 
+	const cardsSummarySubtitleEl = sectionHeadEl.querySelector(
+		'.cards-summary__subtitle'
+	);
+	cardsSummarySubtitleEl.textContent = cardsSummarySubtitle;
+
 	const cardsSummaryTitleEl = sectionHeadEl.querySelector(
 		'.cards-summary__title'
 	);
 	cardsSummaryTitleEl.textContent = cardsSummaryTitle;
-
-	const cardsSummarySubtitleEl = sectionHeadEl.querySelector(
-		'.cards-summary__subtitle strong'
-	);
-	cardsSummarySubtitleEl.textContent = cardsSummarySubtitle;
 
 	const cardsSummaryDescriptionEl = sectionHeadEl.querySelector(
 		'.cards-summary__desc'
